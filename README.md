@@ -24,3 +24,7 @@
 > - label_to_predict
 > 
 >> enter one label type to predict in [ic50, ki, kd]
+
+#### Job details
+> - Allocation
+>> select 'CACTI'
