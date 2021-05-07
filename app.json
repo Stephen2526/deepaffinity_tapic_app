@@ -1,0 +1,91 @@
+{
+  "checkpointable": false,
+  "name": "deepaffinity_app",
+  "executionSystem": "tacc.stampede2.yfsun55",
+  "executionType": "HPC",
+  "deploymentPath": "apps/deepaffinity_app-0.1",
+  "deploymentSystem": "tacc.work.yfsun55",
+  "helpURI": "https://github.com/Shen-Lab/DeepAffinity",
+  "label": "deepaffinity_app",
+  "shortDescription": "deepAffinity public version",
+  "longDescription": "",
+  "modules": [
+    "load tacc-singularity"
+  ],
+  "ontology": [],
+  "parallelism": "SERIAL",
+  "tags": [],
+  "templatePath": "runner.sh",
+  "testPath": "tester.sh",
+  "version": "0.1",
+  "defaultMaxRunTime": "01:00:00",
+  "inputs": [],
+  "parameters": [
+  	{
+      "id": "running_mode",
+      "description": "enter a number in [1,2,3]\nmode 1: protein-compound pairs prediction\nmode 2: compound screening for human proteins\nmode 3: human protein screening for compounds",
+      "value": {
+        "default": "1",
+        "type": "string",
+        "visible": true,
+        "required": true,
+        "order": 1000
+      }
+    },
+    {
+      "id": "model_version",
+      "description": "enter one version from [1,2,3]\nversion 1: DeepAffinity Bioinf 2019\nversion 2: DeepAffinity JCIM 2021\nversion 3: DeepAffinity+",
+      "value": {
+        "default": "1",
+        "type": "string",
+        "visible": true,
+        "required": true,
+        "order": 1000
+      }
+    },
+  	{
+      "id": "inputs",
+      "description": "mode 1: enter human protein uniprot entry name(without '_HUMAN') and compound smile sequence pairs(delimited by ','), pairs delimited by semicolon\nmode 2: enter protein uniprot entry names(without '_HUMAN'), proteins delimited by semicolon\nmode 3: enter compound smile sequences, compounds delimited by semicolon",
+      "value": {
+        "default": "ALK,C[C@@H](OC1=C(N)N=CC(C2=C(C#N)N(C)N=C2C3)=C1)C4=CC(F)=CC=C4C(N3C)=O;DAPK2,C[C@@H](OC1=C(N)N=CC(C2=C(C#N)N(C)N=C2C3)=C1)C4=CC(F)=CC=C4C(N3C)=O",
+        "type": "string",
+        "visible": true,
+        "required": true,
+        "order": 1000
+      }
+    },
+  	{
+      "id": "output_file",
+      "description": "name of output file, default: prediction.txt",
+      "value": {
+        "default": "prediction.txt",
+        "type": "string",
+        "visible": true,
+        "required": true,
+        "order": 1000
+      }
+    },
+    {
+      "id": "label_to_predict",
+      "description": "enter one label from [ic50, ki, kd]",
+      "value": {
+        "default": "ic50",
+        "type": "string",
+        "visible": true,
+        "required": true,
+        "order": 1000
+      }
+    },
+    {
+      "id": "CONTAINER_IMAGE",
+      "value": {
+        "default": "ste55/deepaffinity:0.1",
+        "type": "string",
+        "visible": false,
+        "required": true,
+        "order": 1000
+      }
+    }
+  ],
+  "outputs": []
+}
