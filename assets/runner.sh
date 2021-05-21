@@ -27,7 +27,7 @@ fi
 # set +x
 
 COMMAND=" bash run_job.sh "
-PARAMS=" ${running_mode} ${model_version} ${inputs} ${output_file} ${label_to_predict} "
+PARAMS=" ${running_mode} ${model_version} ${inputs} ${output_file} ${label_to_predict} ${compound_library}"
 
 
 

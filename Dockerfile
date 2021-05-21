@@ -32,6 +32,7 @@ ENV PATH /opt/conda/envs/deepAff/bin:$PATH
 ADD joint-Model_predict.py inputs_proc.py run_job.sh uniprot.human.scratch_outputs.w_sps.tab_corrected ./
 ADD pretrained_checkpoints pretrained_checkpoints/
 ADD data data/
+ADD comp_lib comp_lib/
 RUN chmod a+x run_job.sh
 RUN chmod -R go=u /deepaffinity
 

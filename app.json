@@ -5,7 +5,7 @@
   "executionType": "HPC",
   "deploymentPath": "apps/deepaffinity_app-0.1",
   "deploymentSystem": "tacc.work.yfsun55",
-  "helpURI": "https://github.com/Shen-Lab/DeepAffinity",
+  "helpURI": "https://github.com/Stephen2526/deepaffinity_tapic_app",
   "label": "deepaffinity_app",
   "shortDescription": "deepAffinity public version",
   "longDescription": "",
@@ -18,7 +18,7 @@
   "templatePath": "runner.sh",
   "testPath": "tester.sh",
   "version": "0.1",
-  "defaultMaxRunTime": "01:00:00",
+  "defaultMaxRunTime": "02:00:00",
   "inputs": [],
   "parameters": [
   	{
@@ -70,6 +70,17 @@
       "description": "enter one label from [ic50, ki, kd]",
       "value": {
         "default": "ic50",
+        "type": "string",
+        "visible": true,
+        "required": true,
+        "order": 1000
+      }
+    },
+    {
+      "id": "compound_library",
+      "description": "enter one compound library to screen from ['drug-rep-hub','stitch','zinc','pubchem']",
+      "value": {
+        "default": "drug-rep-hub",
         "type": "string",
         "visible": true,
         "required": true,
