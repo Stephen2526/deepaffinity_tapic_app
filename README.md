@@ -1,4 +1,4 @@
-# deepaffinity_tapic_app
+# deepaffinity_app
 ## Parameters
 > - ### running_mode
 >
